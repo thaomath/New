@@ -41,7 +41,7 @@ col1, col2, col3 = st.columns([1,1,1])
 with col1:
     st.sidebar.write("")
 with col2:
-    image = Image.open('Data\\logo.png')
+    image = Image.open('Data/logo.png')
     st.sidebar.image(image, use_column_width="always")
 with col3:
     st.sidebar.write("")
@@ -49,8 +49,8 @@ with col3:
 ########################
 # Lecture des fichiers #
 ########################
-data_test_std = pd.read_csv('Data\\P7_data_test_20features_importance_std_sample.csv', sep=",")
-data_test_interprete = pd.read_csv('Data\\P7_data_test_interprete_sample.csv', sep=",")
+data_test_std = pd.read_csv('Data/P7_data_test_20features_importance_std_sample.csv', sep=",")
+data_test_interprete = pd.read_csv('Data/P7_data_test_interprete_sample.csv', sep=",")
 
 #################################################
 #     Lecture de l'information d'un client      #
@@ -183,7 +183,7 @@ with col2:
     # Lecture du modèle de prédiction et des scores #
     #################################################
 # Loading model to compare the results
-model_LGBM = pickle.load(open('Data\\model_complete.pkl','rb'))
+model_LGBM = pickle.load(open('Data/model_complete.pkl','rb'))
     
 # Score client    
 X = data_test_std[data_test_std.SK_ID_CURR==int(ID_client)]
