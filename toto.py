@@ -8,10 +8,10 @@ import base64
 
 from lightgbm import LGBMClassifier
 
-data = pd.read_csv('C:\\Users\\LEMuon\\Documents\\Thao_Openclassrooms\\P7_final\\New\\Data\\P7_data_test_20features_importance_std_sample.csv', sep=",")
+data = pd.read_csv(Data/P7_data_test_20features_importance_std_sample.csv', sep=",")
 
 # Loading model to compare the results
-model = pickle.load(open('C:\\Users\\LEMuon\\Documents\\Thao_Openclassrooms\\P7_final\\New\\Data\\model_complete.pkl','rb'))
+model = pickle.load(open('Data/model_complete.pkl','rb'))
 
 seuil = 0.52
 
