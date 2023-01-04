@@ -39,10 +39,14 @@ def predict():
     #id = request.form['id_client']
     if 'id' in request.args:
         id = int(request.args['id'])
+
+
     #id = int(id)
     if id not in list_id_client:
         prediction="Ce client n'est pas répertorié"
     else :
+        #prediction="Ce client est répertorié"
+  
         X = data[data['SK_ID_CURR'] == id]
         X = X.drop(['SK_ID_CURR'], axis=1)
 
@@ -51,8 +55,10 @@ def predict():
             prediction = "Client défaillant: prêt refusé"
         else:
             prediction = "Client non défaillant:  prêt accordé"
+    return render_template('dashboard.html',  prediction_text=prediction)
+   
 
-    return render_template('dashboard.html', prediction_html=prediction)
+    
 
 # Define endpoint for flask
 #app.add_url_rule('/predict', 'predict', predict)
